@@ -12,6 +12,7 @@ public class HelloWorldController {
 
 	@GetMapping("hello")
 	public ResponseEntity<String> helloWorld(@RequestParam(name="nome", required=false) String nome) {
+		nome = "wesley";
 		//a variável nome, contém o valor passado no browser na sua chamada
 		//Exemplo http://localhost:8080/atividades/hello?nome=felipe
 		//Considerando o exemplo acima a variável nome virá preenchida com o texto "felipe"
@@ -19,9 +20,7 @@ public class HelloWorldController {
 		//Considerando a dica acima, implemente seu código para que o programa retorne a 
 		//palavra Hello world concatenada com o nome.
 		//Exmeplo de resposta: Hello world felipe !
-		
-		
-		return ResponseEntity.ok("Hello world !");
+			
+		return ResponseEntity.ok("Hello world " + nome + "!");
 	}
-	
 }
